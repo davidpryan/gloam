@@ -96,7 +96,7 @@ plays the lane shown. Clock in and out.
 ## The vocal bank
 
 The choir sings from a bank of up to 16 slices (about 12 seconds at 16 kHz, 8-bit) kept in its own flash region,
-which the installer writes after the firmware (`app/build/gloam-res.bin`). The factory bank is sung by GLOAM's own
+which the installer writes after the firmware (`app/build/gloam-0.1-res.bin` beside the package). The factory bank is sung by GLOAM's own
 formant synthesiser (`tools/make_bank.py`): long vowels, rises, falls, calls and hums, no recordings of anyone. To
 use your own voices (your recordings, or samples you have the right to use), put up to 16 WAV files in a folder:
 
