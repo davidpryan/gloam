@@ -1,0 +1,101 @@
+# GLOAM in the host simulator: ./build.sh --host
+wait 700
+expect page 0
+expect lane 0
+expect bank 16
+expect nsec 6
+# PLAY: the song from INTRO (8 bars at 140: 13.7 s), then BUILD by its follow action
+tap PLAY
+wait 300
+expect playing 1
+expect sec 0
+wait 14000
+expect sec 1
+# the song page: white key 3 cues DROP, which starts at the next bar
+tap HOME
+wait 30
+expect page 1
+tapkey w2
+wait 30
+expect cue 2
+wait 1900
+expect sec 2
+expect cue -1
+# in the drop the kick plays (half-time pattern, channel 10)
+expect_out USB 99 24 7F
+# HOLD (black 1) keeps it
+tapkey b0
+wait 30
+expect hold 1
+# SCREW: SELECT turned; an octave is 127, so 32 is about 0.84 of speed and pitch
+turn SELECT 8
+wait 300
+expect screw 32
+expect screwmul100 84
+expect bpm10 1175
+turn SELECT -8
+wait 30
+# the lane page: black 2 is the snare row; white 6 a step; held, K2 nudges it, K3 rolls it
+tap SEQ
+wait 30
+tapkey b1
+wait 30
+expect row 1
+tapkey w5
+wait 30
+expect hit5 100
+key w5 down
+wait 30
+turn K2 3
+turn K3 2
+wait 30
+key w5 up
+wait 30
+expect hit5 100
+expect nudge5 3
+expect roll5 3
+# ARP generates the drums; SEL + ARP takes it back
+tap ARP
+wait 50
+press SEL
+tap ARP
+release SEL
+wait 50
+expect hit5 100
+expect nudge5 3
+# the choir lane: black 3 sings slice 3
+turn ALGO 3
+wait 30
+expect lane 3
+# LANTERN (stopped): white 8 sings the choir's first slice
+tap PLAY
+wait 2000
+expect playing 0
+tap GLO
+wait 30
+expect lantern 1
+tapkey w7
+wait 30
+expect choir_on 1
+tap GLO
+wait 30
+# FX held + white 1: the reverb freezes while it is held
+press FX
+key w0 down
+wait 50
+expect freeze 1
+key w0 up
+release FX
+wait 50
+expect freeze 0
+# saved, and the song is back after a restart
+tap SAVE
+wait 300
+reboot
+wait 700
+expect nsec 6
+expect bank 16
+press HOME
+wait 1200
+expect card 6
+release HOME

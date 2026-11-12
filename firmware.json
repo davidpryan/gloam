@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "id": "gloam",
+  "name": "GLOAM",
+  "author": "David Ryan",
+  "license": "MPL-2.0",
+  "tagline": "witch house and melodic dubstep: choir, wobble, rain",
+  "description": "GLOAM is a groovebox for witch house and melodic dubstep. Five lanes: drums with nudges, falling rolls and kept looseness (UNSNAP); bass as an 808, reese or beat-locked wobble; minor chords, voice-led and ducked by the kick; a choir singing a vocal bank with pitch and formant apart; and air (rain, crackle, wind). SCREW slows and lowers everything; a reverb freezes. A 32-section arranger with follow actions, transitions and macro ramps; live launch, hold and recording. LANTERN makes the keys lit pads.",
+  "tags": ["groovebox", "sequencer", "synth", "midi"],
+  "install": "https://davidpryan.github.io/gloam/install/",
+  "site": "https://davidpryan.github.io/gloam/",
+  "source": "https://github.com/davidpryan/gloam",
+  "screenshot": "app/docs/img/screen-drums.png",
+  "hardware": {
+    "models": ["FM-1"],
+    "flash": ["856014", "B36014"],
+    "features": ["bluetooth-midi", "bluetooth-midi-devices", "velocity", "pressure", "screen-reader", "backup", "resources"]
+  },
+  "credits": "Built on fm1-base and felucca-bsp, from Felucca by Leo Kuroshita (Hügelton Instruments). Its factory voice is sung by its own formant synthesiser. Fonts: Barlow (SIL OFL 1.1)."
+}

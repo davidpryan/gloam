@@ -1,0 +1,34 @@
+# GLOAM's manual screenshots: ./build.sh --shots
+wait 700
+tap HOME
+tapkey w2
+wait 3000
+tap SEQ
+wait 1500
+shot screen-drums.png
+turn ALGO 1
+wait 700
+shot screen-bass.png
+turn ALGO 1
+wait 500
+shot screen-chords.png
+turn ALGO 1
+wait 500
+shot screen-choir.png
+turn ALGO 1
+wait 300
+shot screen-air.png
+tap HOME
+wait 300
+shot screen-song.png
+tap EDIT
+turn SELECT 14
+wait 200
+shot screen-section.png
+tap SEQ
+tap GLO
+wait 300
+key w2 down
+wait 200
+shot screen-lantern.png
+key w2 up
