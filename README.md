@@ -132,3 +132,5 @@ Projects are four slots of 38 KB (the project is 28 KB), around the bank's regio
 ## Licence
 
 MPL-2.0, as fm1-base.
+
+You can also try Gloam in the browser, no flashing needed, in the free community [FM-1 Emulator](https://fm1-emulator.atst.tools/).
